@@ -1,0 +1,174 @@
+:root {
+    --background: #282c34;
+    --foreground: #abb2bf;
+    --cyan: #56b6c2;
+    --blue: #61afef;
+    --yellow: #e5c07b;
+    --comment: #5c6370;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 1.5em 2em;
+    line-height: 1.5;
+}
+
+h1, h2 {
+    color: var(--blue);
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--blue);
+    padding-bottom: 0.3em;
+    margin-top: 2em;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--comment);
+    margin: 2em 0;
+}
+
+/* Listas */
+
+ul {
+    padding-left: 1.2em;
+    margin-bottom: 1.2em;
+}
+
+li {
+    margin-bottom: 0.6em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* Código inline */
+
+code {
+    background-color: #21252b;
+    color: var(--cyan);
+    padding: 0.15em 0.3em;
+    border-radius: 4px;
+    font-family: 'Fira Mono', Consolas, Monaco, 'Courier New', monospace;
+    font-size: 1rem;
+    white-space: normal;   /* para permitir salto y ajuste en móviles */
+    word-break: break-word;
+}
+
+/* Bloques de código */
+
+pre {
+    background-color: #21252b;
+    color: var(--foreground);
+    padding: 1.2em 1.5em;
+    border-radius: 8px;
+    font-family: 'Fira Mono', Consolas, Monaco, 'Courier New', monospace;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin: 1em 0;
+    white-space: pre-wrap;       /* permite salto de línea */
+    word-break: break-word;      /* divide palabras largas */
+    box-shadow: 0 0 8px rgba(86, 182, 194, 0.5);
+    overflow-x: visible;         /* evita scroll horizontal */
+    max-width: 100%;             /* que no se salga del contenedor */
+}
+
+/* Resaltar keywords en color */
+
+pre code {
+    color: var(--foreground);
+}
+
+/* Negrita para palabras clave dentro del texto */
+
+b {
+    color: var(--yellow);
+}
+
+/* Enlaces - si se usan */
+
+a {
+    color: var(--cyan);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    body {
+        margin: 1em;
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    code {
+        font-size: 1.1rem;
+        padding: 0.2em 0.4em;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    pre {
+        font-size: 1.15rem;
+        padding: 1em;
+        white-space: pre-wrap;
+        word-break: break-word;
+        box-shadow: none;
+        overflow-x: visible;  /* importante para evitar scroll horizontal */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 0.8em;
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    code {
+        font-size: 1.2rem;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    pre {
+        font-size: 1.2rem;
+        padding: 1em;
+        white-space: pre-wrap;
+        word-break: break-word;
+        overflow-x: visible;  /* importante para evitar scroll horizontal */
+    }
+}

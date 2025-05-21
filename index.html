@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apunte Teórico de Conceptos Utilizados en los Ejemplos de C</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Apunte Teórico de Conceptos Utilizados en los Ejemplos de C</h1>
+
+    <hr />
+    <h2>1. Entrada y Salida de Datos</h2>
+    <ul>
+        <li><b>printf</b>: Imprime texto o variables en pantalla.<br />
+            <b>Sintaxis:</b> <code>printf("Texto %d", variable);</code>
+        </li>
+        <li><b>scanf</b>: Lee datos desde teclado (para enteros, cadenas, etc.).<br />
+            <b>Sintaxis:</b> <code>scanf("%d", &amp;variable);</code><br />
+            Para cadenas: <code>scanf("%s", cadena);</code>
+        </li>
+        <li><b>fgets</b>: Lee una línea de texto (incluye espacios).<br />
+            <b>Sintaxis:</b> <code>fgets(cadena, tamaño, stdin);</code>
+        </li>
+    </ul>
+
+    <hr />
+    <h2>2. Declaración y Uso de Variables</h2>
+    <ul>
+        <li><b>int, char, float, etc.</b>: Tipos de datos básicos.<br />
+            <b>Ejemplo:</b> <code>int numero; char letra;</code>
+        </li>
+        <li><b>Arreglos (vectores)</b>: Colección de elementos del mismo tipo.<br />
+            <b>Ejemplo:</b> <code>int arreglo[10]; char cadena[100];</code>
+        </li>
+    </ul>
+
+    <hr />
+    <h2>3. Inicialización y Recorrido de Arreglos</h2>
+    <ul>
+        <li><b>Inicialización manual:</b>
+            <pre>int arreglo[3] = {1, 2, 3};</pre>
+        </li>
+        <li><b>Recorrido con for:</b>
+            <pre>for(int i = 0; i &lt; tamaño; i++) {
+    // usar arreglo[i]
+}</pre>
+        </li>
+    </ul>
+
+    <hr />
+    <h2>4. Funciones</h2>
+    <ul>
+        <li><b>Declaración:</b>
+            <pre>tipo nombre_funcion(parámetros) {
+    // código
+    return valor;
+}</pre>
+        </li>
+        <li><b>Ejemplo:</b>
+            <pre>int suma(int a, int b) {
+    return a + b;
+}</pre>
+        </li>
+    </ul>
+
+    <hr />
+    <h2>5. Uso de srand y rand para Números Aleatorios</h2>
+    <ul>
+        <li><code>srand(time(NULL));</code>: Inicializa la semilla aleatoria.</li>
+        <li><code>rand();</code>: Devuelve un número pseudoaleatorio.</li>
+        <li>Para un rango: <code>rand() % rango + inicio;</code></li>
+        <li><b>Ejemplo:</b>
+            <pre>int n = rand() % 10 + 1; // Entre 1 y 10</pre>
+        </li>
+    </ul>
+
+    <hr />
+    <h2>6. Cadenas de Caracteres (Strings)</h2>
+    <ul>
+        <li><b>Declaración:</b> <code>char cadena[100];</code></li>
+        <li><b>Lectura:</b> <code>fgets(cadena, 100, stdin);</code></li>
+        <li><b>Eliminación de salto de línea:</b>
+            <pre>cadena[strcspn(cadena, "\n")] = '\0';</pre>
+        </li>
+        <li><b>Concatenar:</b> <code>strcat(cadena1, cadena2);</code></li>
+        <li><b>Comparar:</b> <code>strcmp(cadena1, cadena2);</code></li>
+        <li><b>Buscar subcadena:</b> <code>strstr(cadena, subcadena);</code></li>
+    </ul>
+
+    <hr />
+    <h2>7. Funciones de la Biblioteca &lt;string.h&gt;</h2>
+    <ul>
+        <li><code>strlen(cadena)</code>: Devuelve la longitud.</li>
+        <li><code>strcpy(destino, origen)</code>: Copia cadenas.</li>
+        <li><code>strcat(destino, origen)</code>: Concatena cadenas.</li>
+        <li><code>strcmp(cad1, cad2)</code>: Compara cadenas.</li>
+        <li><code>strstr(cad, sub)</code>: Busca subcadena.</li>
+    </ul>
+
+    <hr />
+    <h2>8. Funciones de la Biblioteca &lt;ctype.h&gt;</h2>
+    <ul>
+        <li><code>toupper(c)</code>: Convierte a mayúscula.</li>
+        <li><code>tolower(c)</code>: Convierte a minúscula.</li>
+        <li><code>isalpha(c)</code>: ¿Es letra?</li>
+        <li><code>isdigit(c)</code>: ¿Es dígito?</li>
+    </ul>
+
+    <hr />
+    <h2>9. Matrices (Arreglos Bidimensionales)</h2>
+    <ul>
+        <li><b>Declaración:</b> <code>int matriz[3][3];</code></li>
+        <li><b>Acceso:</b> <code>matriz[fila][columna];</code></li>
+    </ul>
+
+    <hr />
+    <h2>10. Palíndromos</h2>
+    <ul>
+        <li>Comparar caracteres desde los extremos hacia el centro.</li>
+        <li>Usar <code>tolower</code> para ignorar mayúsculas/minúsculas.</li>
+    </ul>
+
+    <hr />
+    <h2>11. Contar Frecuencias</h2>
+    <ul>
+        <li>Usar un vector de frecuencias.<br />
+            <b>Ejemplo:</b>
+            <pre>int frecuencia[51] = {0};
+frecuencia[valor]++;</pre>
+        </li>
+    </ul>
+
+    <hr />
+    <h2>12. Comparación de Cadenas Ignorando Mayúsculas/Minúsculas</h2>
+    <ul>
+        <li>Convertir ambas cadenas a minúsculas o mayúsculas antes de comparar.</li>
+    </ul>
+
+    <hr />
+    <h2>13. Operaciones con Vectores y Matrices</h2>
+    <ul>
+        <li>Suma de elementos, producto, combinación, ordenamiento (por ejemplo, método de intercambio).</li>
+    </ul>
+
+    <hr />
+    <h2>14. Sintaxis Básica de un Programa en C</h2>
+    <pre>#include &lt;stdio.h&gt;
+int main() {
+    // código
+    return 0;
+}</pre>
+
+    <hr />
+    <h2>15. Estructuras de Control</h2>
+    <ul>
+        <li><b>if/else:</b>
+            <pre>if (condición) {
+    // código
+} else {
+    // otro código
+}</pre>
+        </li>
+        <li><b>for:</b>
+            <pre>for (inicialización; condición; incremento) {
+    // código
+}</pre>
+        </li>
+    </ul>
+
+    <hr />
+    <h2>16. Ejemplo de Uso de Funciones y Arreglos</h2>
+    <pre>int sumaVector(int v[], int n) {
+    int suma = 0;
+    for (int i = 0; i &lt; n; i++) {
+        suma += v[i];
+    }
+    return suma;
+}</pre>
+
+    <hr />
+    <h2>17. Ejemplo de Conversión de Temperaturas</h2>
+    <pre>float celsius = (fahrenheit - 32) * 5.0 / 9.0;</pre>
+
+    <hr />
+    <h2>18. Ejemplo de Verificación de Número Primo</h2>
+    <pre>bool esPrimo(int n) {
+    if (n &lt;= 1) return false;
+    for (int i = 2; i*i &lt;= n; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}</pre>
+
+    <hr />
+    <h2>19. Ordenamiento Simple (Burbuja)</h2>
+    <pre>for (int i = 0; i &lt; n-1; i++) {
+    for (int j = 0; j &lt; n-i-1; j++) {
+        if (v[j] &gt; v[j+1]) {
+            int temp = v[j];
+            v[j] = v[j+1];
+            v[j+1] = temp;
+        }
+    }
+}</pre>
+
+    <hr />
+    <h2>20. Observaciones Generales</h2>
+    <ul>
+        <li>Siempre inicializa los arreglos y variables.</li>
+        <li>Usa funciones para dividir el código en partes reutilizables.</li>
+        <li>Usa comentarios para aclarar el propósito del código.</li>
+    </ul>
+    <hr />
+</body>
+</html>
