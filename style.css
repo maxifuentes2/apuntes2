@@ -1,10 +1,12 @@
 :root {
-    --background: #282c34;
-    --foreground: #abb2bf;
-    --cyan: #56b6c2;
-    --blue: #61afef;
-    --yellow: #e5c07b;
-    --comment: #5c6370;
+    --background: #1e1e2e;
+    --foreground: #f8f8f2;
+    --keyword: #fab387;
+    --heading: #89b4fa;
+    --code: #f38ba8;
+    --comment: #585b70;
+    --highlight: #313244;
+    --border: #45475a;
 }
 
 * {
@@ -16,27 +18,36 @@ body {
     color: var(--foreground);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 1.5em 2em;
-    line-height: 1.5;
+    line-height: 1.6;
+    font-size: 18px;
 }
 
+/* Títulos */
 h1, h2 {
-    color: var(--blue);
-    margin-bottom: 0.5em;
+    color: var(--heading);
+    margin-bottom: 0.6em;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     font-weight: 700;
+    text-align: center;
+    border-bottom: 4px double var(--heading);
+    padding-bottom: 0.3em;
+    margin-bottom: 1.5em;
 }
 
 h2 {
     font-size: 1.8rem;
     font-weight: 600;
-    border-bottom: 2px solid var(--blue);
-    padding-bottom: 0.3em;
+    border-left: 6px solid var(--heading);
+    padding-left: 0.6em;
+    background-color: var(--highlight);
     margin-top: 2em;
+    margin-bottom: 1em;
 }
 
+/* Separador */
 hr {
     border: 0;
     border-top: 1px solid var(--comment);
@@ -44,7 +55,6 @@ hr {
 }
 
 /* Listas */
-
 ul {
     padding-left: 1.2em;
     margin-bottom: 1.2em;
@@ -53,70 +63,59 @@ ul {
 li {
     margin-bottom: 0.6em;
     word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
 }
 
-/* Código inline */
+/* Texto destacado */
+b {
+    color: var(--keyword);
+    font-weight: 600;
+}
 
+/* Código en línea */
 code {
-    background-color: #21252b;
-    color: var(--cyan);
-    padding: 0.15em 0.3em;
-    border-radius: 4px;
-    font-family: 'Fira Mono', Consolas, Monaco, 'Courier New', monospace;
+    background-color: var(--highlight);
+    color: var(--code);
+    padding: 0.2em 0.4em;
+    border-radius: 5px;
+    font-family: 'Fira Mono', Consolas, Monaco, monospace;
     font-size: 1rem;
-    white-space: normal;   /* para permitir salto y ajuste en móviles */
+    white-space: normal;
     word-break: break-word;
+    border: 1px solid var(--border);
 }
 
 /* Bloques de código */
-
 pre {
-    background-color: #21252b;
+    background-color: var(--highlight);
     color: var(--foreground);
     padding: 1.2em 1.5em;
     border-radius: 8px;
-    font-family: 'Fira Mono', Consolas, Monaco, 'Courier New', monospace;
-    font-size: 1.3rem;
-    line-height: 1.4;
-    margin: 1em 0;
-    white-space: pre-wrap;       /* permite salto de línea */
-    word-break: break-word;      /* divide palabras largas */
-    box-shadow: 0 0 8px rgba(86, 182, 194, 0.5);
-    overflow-x: visible;         /* evita scroll horizontal */
-    max-width: 100%;             /* que no se salga del contenedor */
+    font-family: 'Fira Mono', Consolas, Monaco, monospace;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin: 1.2em 0;
+    border-left: 5px solid var(--heading);
+    box-shadow: 0 0 12px rgba(137, 180, 250, 0.2);
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
 }
 
-/* Resaltar keywords en color */
-
-pre code {
-    color: var(--foreground);
-}
-
-/* Negrita para palabras clave dentro del texto */
-
-b {
-    color: var(--yellow);
-}
-
-/* Enlaces - si se usan */
-
+/* Enlaces */
 a {
-    color: var(--cyan);
-    text-decoration: none;
-}
-
-a:hover {
+    color: var(--heading);
     text-decoration: underline;
 }
 
-/* Responsive */
+a:hover {
+    background-color: var(--highlight);
+}
 
+/* Responsive */
 @media (max-width: 768px) {
     body {
         margin: 1em;
-        font-size: 18px;
+        font-size: 17px;
     }
 
     h1 {
@@ -128,26 +127,19 @@ a:hover {
     }
 
     code {
-        font-size: 1.1rem;
-        padding: 0.2em 0.4em;
-        white-space: normal;
-        word-break: break-word;
+        font-size: 1rem;
     }
 
     pre {
-        font-size: 1.15rem;
+        font-size: 1rem;
         padding: 1em;
-        white-space: pre-wrap;
-        word-break: break-word;
-        box-shadow: none;
-        overflow-x: visible;  /* importante para evitar scroll horizontal */
     }
 }
 
 @media (max-width: 480px) {
     body {
         margin: 0.8em;
-        font-size: 20px;
+        font-size: 16px;
     }
 
     h1 {
@@ -159,16 +151,11 @@ a:hover {
     }
 
     code {
-        font-size: 1.2rem;
-        white-space: normal;
-        word-break: break-word;
+        font-size: 1rem;
     }
 
     pre {
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: 1em;
-        white-space: pre-wrap;
-        word-break: break-word;
-        overflow-x: visible;  /* importante para evitar scroll horizontal */
     }
 }

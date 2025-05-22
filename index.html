@@ -154,11 +154,11 @@ int main() {
     <hr />
     <h2>15. Estructuras de Control</h2>
     <ul>
-        <li><b>if/else:</b>
-            <pre>if (condición) {
-    // código
+        <li><b>if/else con condiciones simples y compuestas:</b>
+            <pre>if (nota &gt;= 6 &amp;&amp; asistencia &gt;= 75) {
+    printf("Aprobado.\n");
 } else {
-    // otro código
+    printf("Desaprobado.\n");
 }</pre>
         </li>
         <li><b>for:</b>
@@ -210,6 +210,28 @@ int main() {
         <li>Siempre inicializa los arreglos y variables.</li>
         <li>Usa funciones para dividir el código en partes reutilizables.</li>
         <li>Usa comentarios para aclarar el propósito del código.</li>
+    </ul>
+
+    <hr />
+    <h2>21. Condiciones Compuestas (Dobles Condiciones)</h2>
+    <ul>
+        <li>Se utilizan operadores lógicos para combinar condiciones.</li>
+        <li><b>AND (&&)</b>: Ambas condiciones deben ser verdaderas.</li>
+        <li><b>OR (||)</b>: Al menos una condición debe ser verdadera.</li>
+        <li><b>NOT (!)</b>: Niega una condición (verdadero → falso).</li>
+        <li><b>Ejemplos:</b>
+            <pre>if (edad &gt;= 18 &amp;&amp; edad &lt;= 65) {
+    printf("Edad válida para trabajar.\n");
+}
+
+if (nota &lt; 4 || asistencia &lt; 75) {
+    printf("Alumno desaprobado.\n");
+}
+
+if (!esValido) {
+    printf("Valor no válido.\n");
+}</pre>
+        </li>
     </ul>
     <hr />
 </body>
